@@ -4,3 +4,5 @@ import { fetchProductsList } from './helpers/fetchFunctions';
 document.querySelector('.cep-button').addEventListener('click', searchCep);
 
 console.log(fetchProductsList('mouse'));
+
+logogog
