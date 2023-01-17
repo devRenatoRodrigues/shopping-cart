@@ -23,6 +23,6 @@ describe('Teste a função fetchProduct', () => {
   it('testa se retorna um error quando não passa nenhum argumento na função', async () => {
     const emptyProduct = '';
 
-    await expect(fetchProduct(emptyProduct)).rejects.toThrow(new Error('ID não informado'));
+    await expect(fetchProduct(emptyProduct)).rejects.toThrow('ID não informado');
   });
 });

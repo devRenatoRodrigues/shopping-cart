@@ -1,13 +1,13 @@
 import { searchCep } from './helpers/cepFunctions';
 import './style.css';
-import { fetchProductsList } from './helpers/fetchFunctions';
+import { fetchProductsList, fetchProduct } from './helpers/fetchFunctions';
 import { createProductElement } from './helpers/shopFunctions';
 
 document.querySelector('.cep-button').addEventListener('click', searchCep);
 
 const products = document.querySelector('.products');
 
-// função para criar um elemento o o texto 'carregando...'
+// função para criar um elemento e o texto 'carregando...'.
 const loading = () => {
   const newElement = document.createElement('h1');
   newElement.innerText = 'Carregando...';
@@ -15,7 +15,7 @@ const loading = () => {
   products.appendChild(newElement);
 };
 
-// função para lançar o erro na tela.
+// função para criar um elemento e o texto de 'erro'.
 const displayError = () => {
   const errorElement = document.createElement('h1');
   errorElement.innerText = 'Algum erro ocorreu, recarregue a página e tente novamente';
@@ -23,7 +23,7 @@ const displayError = () => {
   products.appendChild(errorElement);
 };
 
-// função que exibi 'carregando...' e o remove após adicionar elementos na tela.
+// função que cria os elementos na tela, exibe o 'carregando...' e lança um erro caso ocorra.
 const createElements = async () => {
   loading();
   const removeElement = document.querySelector('.loading');
@@ -44,3 +44,6 @@ const createElements = async () => {
 };
 
 createElements();
+
+console.log(fetchProductsList());
+console.log(fetchProduct());
