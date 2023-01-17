@@ -16,11 +16,11 @@ describe('Teste a função fetchProduct', () => {
     await fetchProduct('MLB1405519561');
     expect(fetch).toHaveBeenCalledWith('https://api.mercadolibre.com/items/MLB1405519561');
   });
-  it('testa se fetch product e uma função', async () => {
-    const expected = await fetchProduct('computador')
+  it('testa se o retorno da função é uma estrutura de dados igual a que se encontra em `product`', async () => {
+    const expected = await fetchProduct('MLB1405519561')
     expect(expected).toEqual(product);
   });
-  it('testa se fetch product e uma função', async () => {
+  it('testa se retorna um error quando não passa nenhum argumento na função', async () => {
     const emptyProduct = '';
 
     await expect(fetchProduct(emptyProduct)).rejects.toThrow(new Error('ID não informado'));
