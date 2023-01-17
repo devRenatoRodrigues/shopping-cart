@@ -44,6 +44,3 @@ const createElements = async () => {
 };
 
 createElements();
-
-console.log(fetchProductsList());
-console.log(fetchProduct());
