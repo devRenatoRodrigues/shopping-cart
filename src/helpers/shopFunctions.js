@@ -132,7 +132,7 @@ export const createProductElement = ({ id, title, thumbnail, price }) => {
     const getProduct = await fetchProduct(id); // pega o produto da API
     saveCartID(id);// salva o produto no localStorage
     const addToCart = createCartProductElement(getProduct);
-    cartProducts.appendChild(addToCart);
+    cartProducts.appendChild(addToCart);// adiciona o produto no carrinho
   });
 
   return section;
