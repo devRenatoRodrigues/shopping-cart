@@ -1,10 +1,9 @@
 import { searchCep } from './helpers/cepFunctions';
 import './style.css';
-import { fetchProductsList, fetchProduct } from './helpers/fetchFunctions';
+import { fetchProductsList } from './helpers/fetchFunctions';
 import { createProductElement } from './helpers/shopFunctions';
 
 document.querySelector('.cep-button').addEventListener('click', searchCep);
-
 const products = document.querySelector('.products');
 
 // função para criar um elemento e o texto 'carregando...'.
@@ -36,7 +35,7 @@ const createElements = async () => {
 
       removeElement.parentNode.removeChild(removeElement);
     })
-    // captura o erro e lança na tela.
+  // captura o erro e lança na tela.
     .catch(() => {
       removeElement.parentNode.removeChild(removeElement);
       return displayError();
@@ -44,3 +43,4 @@ const createElements = async () => {
 };
 
 createElements();
+addProductToCart();

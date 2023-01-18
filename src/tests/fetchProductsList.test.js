@@ -25,7 +25,7 @@ describe('Teste a função fetchProductsList', () => {
   it('teste se ao chamar a função fetchProductList sem argumentos, retorna um erro.', async () => {
     const emptyProduct = '';
     
-   await expect(fetchProductsList(emptyProduct)).rejects.toThrow();
+   await expect(fetchProductsList(emptyProduct)).rejects.toThrow(new Error('Termo de busca não informado'));
   });
 
 
