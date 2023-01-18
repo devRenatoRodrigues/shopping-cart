@@ -9,7 +9,7 @@ const products = document.querySelector('.products');
 const cartProducts = document.querySelector('.cart__products');
 
 // função para criar um elemento e o texto 'carregando...'.
-const loading = () => {
+const displayLoading = () => {
   const newElement = document.createElement('h1');
   newElement.innerText = 'Carregando...';
   newElement.classList.add('loading');
@@ -26,7 +26,7 @@ const displayError = () => {
 
 // função que cria os elementos na tela, exibe o 'carregando...' e lança um erro caso ocorra.
 const createElements = async () => {
-  loading();
+  displayLoading();
   const removeElement = document.querySelector('.loading');
   await fetchProductsList('computador')// pega os dados da API
     .then((response) => {
@@ -46,8 +46,8 @@ const createElements = async () => {
 
 // Função que resgasta os itens do LocalStorage da ultima sessão
 const cartItens = () => {
-  const itens = getSavedCartIDs();//resgata o array do localstorage
-  const request = itens.map(async (element) => {// percorre todos os itens do array
+  const itens = getSavedCartIDs();// resgata o array do localstorage
+  const request = itens.map(async (element) => { // percorre todos os itens do array
     const product = await fetchProduct(element);// faz a requisição para API com id dos produtos
     const createOnCart = createCartProductElement(product);
     cartProducts.appendChild(createOnCart);// adiciona os itens ao carrinho
