@@ -7,6 +7,7 @@ import { getSavedCartIDs, cartPriceCalculator } from './helpers/cartFunctions';
 document.querySelector('.cep-button').addEventListener('click', searchCep);
 const products = document.querySelector('.products');
 const cartProducts = document.querySelector('.cart__products');
+const buttonCep = document.querySelector('.cep-button');
 
 // função para criar um elemento e o texto 'carregando...'.
 const displayLoading = () => {
@@ -62,3 +63,5 @@ cartPriceCalculator();
 getSavedCartIDs();
 
 createElements();
+
+buttonCep.addEventListener('click', searchCep);
