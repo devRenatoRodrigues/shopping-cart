@@ -12,7 +12,7 @@ export const searchCep = () => {
   const getInputValue = document.querySelector('.cep-input').value;
   const addressText = document.querySelector('.cart__address');
   getAddress(getInputValue)
-    .then(({ address, city, district, state, cep}) => {
+    .then(({ address, city, district, state, cep }) => {
       if (!cep) throw new Error('CEP não encontrado');
       addressText.innerText = `${address} - ${district} - ${city} - ${state}`;
     })
