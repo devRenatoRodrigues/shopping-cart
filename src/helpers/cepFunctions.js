@@ -16,7 +16,7 @@ export const searchCep = () => {
       if (!cep) throw new Error('CEP não encontrado');
       addressText.innerText = `${address} - ${district} - ${city} - ${state}`;
     })
-    .catch((error) => {
-      addressText.innerText = error.message;
+    .catch(() => {
+      addressText.innerText = 'CEP não encontrado';
     });
 };
